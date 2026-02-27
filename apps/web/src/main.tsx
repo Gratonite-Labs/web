@@ -38,7 +38,7 @@ createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename="/app">
+        <BrowserRouter basename={import.meta.env.DEV ? '/' : '/app'}>
           <SocketProvider>
             <App />
           </SocketProvider>

@@ -5,7 +5,7 @@ import path from 'path';
 const devPort = Number(process.env.VITE_DEV_PORT ?? process.env.PORT ?? 5173);
 
 export default defineConfig({
-  base: '/app/',
+  base: import.meta.env.DEV ? '/' : '/app/',
   plugins: [react()],
   resolve: {
     alias: {
