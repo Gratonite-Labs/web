@@ -131,9 +131,8 @@ export function App() {
         if (!cancelled) {
           setLoading(false);
         }
-      } catch (error) {
+      } catch {
         if (!cancelled) {
-          console.log("[v0] API error during refresh, showing landing page:", error);
           setLoading(false);
         }
       }
