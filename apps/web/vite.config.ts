@@ -4,8 +4,8 @@ import path from 'path';
 
 const devPort = Number(process.env.VITE_DEV_PORT ?? process.env.PORT ?? 5173);
 
-export default defineConfig({
-  base: import.meta.env.DEV ? '/' : '/app/',
+export default defineConfig(({ command }) => ({
+  base: command === 'serve' ? '/' : '/app/',
   plugins: [react()],
   resolve: {
     alias: {
@@ -41,4 +41,4 @@ export default defineConfig({
       },
     },
   },
-});
+}));
