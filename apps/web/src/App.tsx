@@ -128,9 +128,12 @@ export function App() {
           return;
         }
 
-        setLoading(false);
-      } catch {
         if (!cancelled) {
+          setLoading(false);
+        }
+      } catch (error) {
+        if (!cancelled) {
+          console.log("[v0] API error during refresh, showing landing page:", error);
           setLoading(false);
         }
       }
