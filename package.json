@@ -4,21 +4,14 @@
   "private": true,
   "description": "The ultimate open-source Discord replacement",
   "license": "AGPL-3.0",
-  "engines": {
-    "node": ">=20.0.0",
-    "pnpm": ">=9.0.0"
-  },
-  "packageManager": "pnpm@10.30.0",
+
   "pnpm": {
     "onlyBuiltDependencies": [
-      "argon2",
-      "electron",
-      "esbuild",
-      "sharp"
+      "esbuild"
     ]
   },
   "scripts": {
-    "dev": "pnpm --filter @gratonite/web dev",
+    "dev": "cd apps/web && npx vite --host",
     "build": "pnpm --filter @gratonite/web build",
     "lint": "echo \"Lint is not configured yet\"",
     "typecheck": "pnpm --filter @gratonite/types typecheck && pnpm --filter @gratonite/profile-resolver typecheck && pnpm --filter @gratonite/web typecheck",
@@ -38,6 +31,11 @@
     "docker:reset": "docker-compose down -v && docker-compose up -d"
   },
   "devDependencies": {
-    "debug": "^4.4.3"
+    "@vitejs/plugin-react": "^4.3.4",
+    "debug": "^4.4.3",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "typescript": "^5.7.3",
+    "vite": "^5.4.8"
   }
 }
