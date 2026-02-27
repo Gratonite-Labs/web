@@ -14,5 +14,21 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      // Signal to v0 preview frame that the page is ready
+      (function () {
+        function sendReady() {
+          window.parent.postMessage({ type: 'READY' }, '*');
+          window.parent.postMessage({ type: 'preview-ready' }, '*');
+        }
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', sendReady);
+        } else {
+          sendReady();
+        }
+        // Also fire on load in case DOMContentLoaded already passed
+        window.addEventListener('load', sendReady);
+      })();
+    </script>
   </body>
 </html>
