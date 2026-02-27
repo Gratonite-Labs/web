@@ -2,14 +2,14 @@
 // @gratonite/types — Shared TypeScript types for the Gratonite platform
 // ============================================================================
 
-export * from './snowflake.js';
-export * from './user.js';
-export * from './guild.js';
-export * from './channel.js';
-export * from './message.js';
-export * from './voice.js';
-export * from './bot.js';
-export * from './permissions.js';
-export * from './events.js';
-export * from './api.js';
-export * from './intents.js';
+export * from './snowflake';
+export * from './user';
+export * from './guild';
+export * from './channel';
+export * from './message';
+export * from './voice';
+export * from './bot';
+export * from './permissions';
+export * from './events';
+export * from './api';
+export * from './intents';
