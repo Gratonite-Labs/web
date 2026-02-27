@@ -12,8 +12,15 @@ import { initThemeV2 } from '@/theme/initTheme';
 import { useCallStore } from '@/stores/call.store';
 import { useUnreadStore } from '@/stores/unread.store';
 
+console.log('[v0] main.tsx executing');
 mark('app_start');
-initThemeV2();
+console.log('[v0] mark done');
+try {
+  initThemeV2();
+  console.log('[v0] initThemeV2 done');
+} catch (e) {
+  console.error('[v0] initThemeV2 failed', e);
+}
 
 if (import.meta.env.DEV && typeof window !== 'undefined') {
   window.__gratoniteHarness = {
@@ -34,16 +41,24 @@ if (import.meta.env.DEV && typeof window !== 'undefined') {
   };
 }
 
-createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <BrowserRouter basename="/">
-          <SocketProvider>
-            <App />
-          </SocketProvider>
-        </BrowserRouter>
-      </QueryClientProvider>
-    </ErrorBoundary>
-  </React.StrictMode>,
-);
+console.log('[v0] about to createRoot');
+const rootEl = document.getElementById('root');
+console.log('[v0] root element:', rootEl);
+try {
+  createRoot(rootEl!).render(
+    <React.StrictMode>
+      <ErrorBoundary>
+        <QueryClientProvider client={queryClient}>
+          <BrowserRouter basename="/">
+            <SocketProvider>
+              <App />
+            </SocketProvider>
+          </BrowserRouter>
+        </QueryClientProvider>
+      </ErrorBoundary>
+    </React.StrictMode>,
+  );
+  console.log('[v0] createRoot render called');
+} catch (e) {
+  console.error('[v0] createRoot failed', e);
+}
