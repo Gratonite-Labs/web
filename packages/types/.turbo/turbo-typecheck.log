@@ -1,0 +1,4 @@
+
+> @gratonite/types@0.1.0 typecheck /Users/ferdinand/Projects/untitled folder/packages/types
+> tsc --noEmit
+

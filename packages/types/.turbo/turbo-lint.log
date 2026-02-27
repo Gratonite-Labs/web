@@ -1,0 +1,6 @@
+
+> @gratonite/types@0.1.0 lint /Users/ferdinand/Projects/untitled folder/packages/types
+> eslint src/
+
+sh: eslint: command not found
+ ELIFECYCLE  Command failed.

@@ -1,0 +1,6 @@
+
+> @gratonite/profile-resolver@0.1.0 lint /Users/ferdinand/Projects/untitled folder/packages/profile-resolver
+> eslint src/
+
+sh: eslint: command not found
+ ELIFECYCLE  Command failed.
