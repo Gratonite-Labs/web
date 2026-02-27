@@ -2,6 +2,7 @@
   "name": "@gratonite/web",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "description": "Gratonite web app",
   "scripts": {
     "dev": "vite",
