@@ -16,7 +16,7 @@ export default defineConfig(({ command }) => ({
   },
   server: {
     port: devPort,
-    strictPort: true,
+    strictPort: false,
     proxy: {
       '/api': {
         target: 'http://localhost:4000',
@@ -32,7 +32,6 @@ export default defineConfig(({ command }) => ({
     rollupOptions: {
       input: {
         main: './index.html',
-        redirect: './public/redirect.html',
       },
       output: {
         manualChunks: {
