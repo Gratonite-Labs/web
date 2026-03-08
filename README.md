@@ -1,5 +1,9 @@
 # Gratonite Web
 
+[![Project](https://img.shields.io/badge/project-Gratonite-6d28d9)](https://github.com/CoodayeA/Gratonite)
+[![Status](https://img.shields.io/badge/status-active-16a34a)](https://github.com/Gratonite-Labs/web)
+[![Docs](https://img.shields.io/badge/source%20of%20truth-main%20repo-2563eb)](https://github.com/CoodayeA/Gratonite)
+
 Web client for Gratonite.
 
 This repo contains the web-facing Gratonite app and supporting shared package structure around it.
